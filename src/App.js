@@ -6,11 +6,11 @@ import UnitedStates from "./components/Pages/UnitedStates";
 import Global from "./components/Pages/Global";
 import About from "./components/Pages/About";
 import Home from "./components/Pages/Home";
-import { Switch, Route, BrowserRouter } from "react-router-dom";
+import { Switch, Route, HashRouter } from "react-router-dom";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div>
         <Navbar />
         <Switch>
@@ -24,7 +24,7 @@ const App = () => {
           <Route path="/about" exact component={() => <About />} />
         </Switch>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
