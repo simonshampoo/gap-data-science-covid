@@ -169,11 +169,14 @@ const Selection = () => {
     ],
   };
 
-
   //---------------------------------------------------------
 
   const countryList = [
-    ...new Set(confirmedCasesJSON.map((info) => info["Country/Region"])),
+    ...new Set(
+      confirmedCasesJSON
+        .filter((info) => isNaN(info["Country/Region"].slice(-1)))
+        .map((info) => info["Country/Region"])
+    ),
   ];
   countryList.unshift("Select a country");
 
